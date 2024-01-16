@@ -1,0 +1,5 @@
+# .cmake-format
+# ROS C++ style configuration
+
+# line width
+line_width: 120
