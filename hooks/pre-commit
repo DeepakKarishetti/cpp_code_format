@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FORMAT_SCRIPT="src/common/scripts/code_format/format.sh"
+
+staged_files=($(git diff --name-only --cached))
+for FILE in "${staged_files[@]}"; do
+    if [[ -f "$FILE" && ( "$FILE" == *".cpp" || "$FILE" == *".h" || "$FILE" == *"CMakeLists.txt" ) ]]; then
+        bash "$FORMAT_SCRIPT" -f "$FILE"
+        git add "$FILE"
+    fi
+done

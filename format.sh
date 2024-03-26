@@ -43,4 +43,4 @@ while getopts ":f:d:" opt; do
     esac
 done
 
-echo "Formatting complete."
+# echo "Formatting complete."
